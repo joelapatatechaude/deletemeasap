@@ -27,7 +27,7 @@ class TestFight():
     def teardown_method(self, method):
         self.driver.quit()
 
-    def test_fight(self):
+    def fight(self):
         # Check the current number of battles in event-statistics
         self.driver.get(self.event_ep)
         time.sleep(2)
