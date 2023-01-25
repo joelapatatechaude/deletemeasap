@@ -10,14 +10,9 @@ class TestFight():
         self.event_ep = os.environ.get('EVENT_EP')
         self.fight_ep = os.environ.get('FIGHT_EP')
 
-        logging.getLogger().info(os.environ.get('SEL_EP'))
-        logging.getLogger().info(os.environ.get('FIGHT_EP'))
-        logging.getLogger().info(os.environ.get('EVENT_EP'))
-
         options = webdriver.FirefoxOptions()
         # options = webdriver.EdgeOptions()
         # options = webdriver.ChromeOptions()
-
 
         options.set_capability("se:recordVideo", True)
         options.set_capability("se:timeZone", "Australia/ACT")
@@ -46,7 +41,6 @@ class TestFight():
             self.driver.find_element(By.CSS_SELECTOR, ".btn-primary > h4").click()
         time.sleep(1)
         self.driver.find_element(By.CSS_SELECTOR, ".btn-danger > h4").click()
-        time.sleep(1)
         self.driver.execute_script("window.scrollTo(0, 1920)")
         time.sleep(1)
 
