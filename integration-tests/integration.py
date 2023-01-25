@@ -11,13 +11,6 @@ class TestFight():
         self.fight_ep = os.environ.get('FIGHT_EP')
 
         options = webdriver.FirefoxOptions()
-        # options = webdriver.EdgeOptions()
-        # options = webdriver.ChromeOptions()
-
-        options.set_capability("se:recordVideo", True)
-        options.set_capability("se:timeZone", "Australia/ACT")
-        options.set_capability("se:screenResolution", "1280x1280")
-
         command_executor = os.environ.get('SEL_EP')
 
         self.driver = webdriver.Remote(command_executor=command_executor,
@@ -27,7 +20,7 @@ class TestFight():
     def teardown_method(self, method):
         self.driver.quit()
 
-    def fight(self):
+    def test_fight(self):
         # Check the current number of battles in event-statistics
         self.driver.get(self.event_ep)
         time.sleep(2)
